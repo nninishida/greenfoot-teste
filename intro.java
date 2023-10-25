@@ -8,7 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class intro extends World
 {
-
+    public int atraso = 10;
+    public int atraso1 = 10;
+    public int atraso2 = 10;
+    public int atraso3 = 10;
+    public int atraso4 = 10;
+    public int atraso5 = 10;
     /**
      * Constructor for objects of class intro.
      * 
@@ -21,28 +26,34 @@ public class intro extends World
     }
 
     public void act(){
-        //capa
-        if (Greenfoot.isKeyDown("enter")){
-            setBackground(new GreenfootImage("introducao.png"));
-        }
-        //contexto
-        if (Greenfoot.isKeyDown("enter")){
+        atraso1--;
+        //Diálogo Mário
+        if (Greenfoot.isKeyDown("enter") && (atraso1 < 1)){
             setBackground(new GreenfootImage("contexto.png"));
+            atraso2--;
         }
-        //fala dipper
-        if (Greenfoot.isKeyDown("enter")){
+        //
+        if(Greenfoot.isKeyDown("enter") && (atraso2 < 1)){
             setBackground(new GreenfootImage("dipperfalando.png"));
+            atraso3--;
         }
-        //fala mabel
-        if (Greenfoot.isKeyDown("enter")){
+        //Diálogo Mário
+        if (Greenfoot.isKeyDown("enter") && (atraso3 < 1)){
             setBackground(new GreenfootImage("falam.png"));
+            atraso4--;
+        }
+        //
+        if (Greenfoot.isKeyDown("enter") && (atraso4 < 1)){
+            setBackground(new GreenfootImage("antesdojogo.png"));
+            atraso5--;
         }
         //Iniciar o jogo
-        if (Greenfoot.isKeyDown("enter")){
+        if (Greenfoot.isKeyDown("enter") && (atraso4 < 1)){
             MysteryShack world = new MysteryShack();
             Greenfoot.setWorld(world);
         }
     }
+    
     /**
      * Prepara o mundo para o início do programa.
      * Ou seja: criar os objetos iniciais e adicioná-los ao mundo.
